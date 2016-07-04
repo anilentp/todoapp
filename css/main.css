@@ -1,0 +1,40 @@
+.bg-pg{
+	background-color: #DCE7BD;
+}
+.bg-title{
+	background-color: #9E293B;
+}
+.title{
+	color: #DCE7BD;
+}
+.btn-floating:hover{
+	background-color: #F44336;
+}
+.tarea{
+	width: 80%;
+	margin: 5px auto;
+	padding: 20px;
+	background-color: #D86666;
+	font-size: 24px;
+	color: whitesmoke;
+	border: solid 5px #8C0606;
+	height: 105px;
+
+}
+.ion-close-round{
+	font-size: 15px;
+}
+#tarea{
+	height: 60px;
+}
+.ion-trash-b{
+float: right;
+}
+
+.bg-btn {
+	background-color: #F44336;
+
+}
+.bg-btn:hover {
+	background-color:  #9E293B;
+}

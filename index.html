@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>TO DO Application</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Oxygen:400,700' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  	<link rel="stylesheet" href="css/main.css">
+</head>
+<body class="bg-pg">
+	<header>
+		<div class="container-fluid bg-title">
+			<div class="row">
+				<div class="col s12">
+					<h2 class="title center">TO DO APP</h2>
+				</div>
+			</div>
+		</div>
+	</header>
+	<section>
+		<div class="container">
+			<div class="row">
+				<div class="col s10 m10 l10">
+					<textarea name="todoapp" id="tarea" cols="10" rows="20"></textarea>
+				</div>	
+				<div class="col s2 m2 l2">
+					<a class="bg-title btn-floating btn-large waves-effect waves-light" onclick="anadirElemento('tarea-nueva', 'tarea')"><i class="ion-plus-round"></i></a>
+					<a class="bg-title btn-floating btn-large waves-effect waves-light" onclick="eliminarTodos()"><i class="ion-close-round"></i></a>
+				</div>
+			</div>
+		</div>
+		<div id="tarea-nueva" class="text-center">
+
+		</div>
+	<!--<footer class="bg-title">
+		<div class="text-center">
+		<button type="button" class="btn btn-info" onclick="caller('tarea')">Agregar A</button>
+		<button type="button" class="btn btn-info" onclick="caller('azul')">Agregar B</button>
+		<button type="button" class="btn btn-danger" onclick="eliminarPrimero()">Eliminar primero</button>
+		<button type="button" class="btn btn-warning" onclick="eliminarUltimo()">Eliminar ultimo</button>
+		<button type="button" class="btn btn-success" onclick="eliminarTodos()">Eliminar todos</button>
+	</div> -->
+
+	</footer>
+	<script>
+		function anadirElemento(contenedor, clase){
+			var tareas = document.getElementById(contenedor);
+			var textoTarea = document.createElement("p");
+			var crearTexto = document.createTextNode(document.getElementById("tarea").value);
+			var checkbox = document.createElement("label");
+			var seleccion = document.createElement("input");
+			checkbox.appendChild(seleccion);
+			seleccion.setAttribute("type", "radio");
+			checkbox.setAttribute("class", "col s2 checkbox");
+
+			var trash = document.createElement("div");
+			trash.setAttribute("class", "bg-btn btn-floating btn-large waves-effect waves-light ion-trash-b col s1");
+			trash.setAttribute("onclick", "eliminar")
+			
+
+			textoTarea.setAttribute("class", clase);
+			textoTarea.appendChild(crearTexto);		
+			tareas.appendChild(textoTarea);
+			textoTarea.appendChild(checkbox);
+			textoTarea.appendChild(trash);
+			
+		}
+
+		function eliminar(){
+			alert("¿Estas seguro que deseas eliminar esta tarea?")
+			var tareas = document.getElementById("tarea-nueva");
+			tareas.remove(tareas.selectedIndex);
+		}
+
+		function eliminarTodos(){
+			alert("¿Estas seguro que deseas eliminar todas las tareas?")
+			var tareas = document.getElementById("tarea-nueva");
+			tareas.innerHTML = "";
+		}
+
+	</script>
+</body>
+</html>
